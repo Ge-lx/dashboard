@@ -1,0 +1,32 @@
+doctype html
+html
+  head
+    block head
+      title Dashboard
+      link(href='https://fonts.googleapis.com/css?family=Josefin+Slab|Playfair+Display+SC', rel='stylesheet')
+      link(href='/stylesheets/dashboard.css', rel='stylesheet')
+      script(src='/javascripts/jquery-3.2.1.js')
+    
+  body
+    #overlay
+      block overlay
+        .card.nohover
+          h1.card_head Dokument.docx
+          .card_body
+            img(src='/images/links/default.svg')
+          .card_bottom_text
+            p.modified_date Vor 10 Tagen zuletzt geändert
+            button.flex_h_1.secondary Drucken
+            button.flex_h_1.main Öffnen
+    #header
+      .flex_h.compact_right
+        a.link(href='http://www.example.com/') Login
+        a.link(href='http://www.example.com/') Über
+      .divider
+    #main
+      #headline.segment
+        h Kohlschein Lütkemeier &amp Partner
+      #top_segment.segment
+        block top_segment
+      #middle_segment.segment
+        block middle_segment

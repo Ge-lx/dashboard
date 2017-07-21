@@ -1,0 +1,59 @@
+extends db_layout.pug
+
+append head
+  script(src='/javascripts/dashboard.js')
+  include db_incl_data.pug
+
+block top_segment
+  .back_container.hidden
+    p <
+  div
+    #level_1.switcher
+      .flex_h
+        // Links
+        .flex_h_1
+          .clock_container
+            h.time 12:34
+            p.pointer_left ^
+            p.day_of_week Montag,
+            p.date 24.03.2017
+        //
+          Links end
+          Datetime start
+        .flex_h_2
+          h.links_heading Häufig genutzt
+          .flex_h.links_holder
+            each link in data.links
+              a.card(href=link.url)
+                .card_body_nopad
+                  img.card_img(src='/images/links/default.svg')
+                h.card_bottom_text= link.name
+    #level_2.switcher
+      // <p id='back_button'>&larr;</p>
+      h.links_heading Arbeitsrecht
+      #documents.flex_h.documents_holder
+        // .card(data-file='A7EB34')
+        //   .card_body_nopad
+        //     // <img class="card_img" src="/images/preview/A7EB34.png">
+        //     img.card_img(src='/images/links/default.svg')
+        //   h.card_bottom_text Einkaufswagen
+block middle_segment
+  .flex_h
+    .flex_h_2.card_invis
+      h.documents_heading Dokumente
+      .flex_h.documents_holder
+        each category, catID in data.categories
+          .card(data-category=catID)
+            .card_body_nopad
+              img.card_img(src='/images/links/default.svg')
+            h.card_bottom_text= category.name
+    .flex_h_1.card.nohover(data_category_id='0')
+      h.card_head Aktuelles
+      .card_body.flex_list
+        each post, postID in data.posts
+          .list_item(data-post=postID)
+            h.li_heading= post.title
+            p.li_date= post.date
+            p.li_text= post.content
+        a.list_link.li_date(href='/aktuelles') alle anzeigen
+    // Category 2
