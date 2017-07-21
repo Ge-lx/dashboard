@@ -18,7 +18,7 @@ app.set('view engine', 'pug');
 // Logging + Utils
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true })); 
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'static')));
 var extendify = require('extendify')( {
 	arrays: 'replace',
@@ -176,7 +176,7 @@ function updateSearchMap() {
 			debug(JSON.stringify(map, null, 4));
 			return;
 		}
-	}); 
+	});
 }
 
 function rescan() {
@@ -195,7 +195,7 @@ function rescan() {
 						updateSearchMap();
 						return body;
 					}
-				}); 
+				});
 			});
 		}
 }
@@ -223,13 +223,13 @@ function finishSetup() {
 			res.download(url, doc.filename);
 	});
 	// Register routes + middleware
-	app.use('/$', loadDashboardMiddleware);
-	app.use('/:site', loadSiteMiddleware);
-	app.use('/:site', userAuthMiddleware);
-	app.use('/:site', require('./routes/crypto'));
-	app.use('/:site', require('./routes/site'));
-	app.use('/$', require('./routes/crypto'));
-	app.use('/$', require('./routes/dashboard'));
+	app.use('/', loadDashboardMiddleware);
+	app.use('/', require('./routes/crypto'));
+	app.use('/', require('./routes/dashboard'));
+	// app.use('/:site', loadSiteMiddleware);
+	// app.use('/:site', userAuthMiddleware);
+	// app.use('/:site', require('./routes/crypto'));
+	// app.use('/:site', require('./routes/site'));
 
 	// Default route -> 404
 	app.use(function(req, res, next) {
@@ -240,10 +240,10 @@ function finishSetup() {
 
 
 	// ERROR HANDLERS
-	// 
+	//
 	// DEV: stacktrace
 	if (app.get('env') === 'development') {
-	 	
+
 	 	app.locals.pretty = true;
 
 		app.use(function(err, req, res, next) {
