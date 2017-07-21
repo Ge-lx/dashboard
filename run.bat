@@ -1,1 +1,1 @@
-set DEBUG=express:* & nodemon ./bin/www 
+set DEBUG=express:* & nodemon --debug=5858 ./bin/start.js
