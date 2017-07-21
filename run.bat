@@ -1,0 +1,1 @@
+set DEBUG=express:* & nodemon ./bin/www 

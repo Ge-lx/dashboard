@@ -1,0 +1,11 @@
+{
+  "name": "cardboard",
+  "version": "0.2.0",
+  "description": "A simple multi-user cms",
+  "main": "cardboard.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gelx",
+  "license": "ISC"
+}

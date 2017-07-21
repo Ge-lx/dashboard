@@ -1,0 +1,27 @@
+extends ./cb_layout.pug
+
+block content
+	.card
+		.row
+			.col-8.col-m-8
+				h1
+					|Create user account
+				p.secondary
+					|To create your account for !{site.title} please enter your name and choose a GOOD password
+		.row
+			.col-4.col-m-8
+				unless existingSession
+					form(action="complete" method="post").nopad
+						.col-2.col-m-4
+							label(for='name')
+								|Name
+						.col-6.col-m-4
+							input(type='name' name='name')
+						.col-2.col-m-4
+							label(for='pw')
+								|Password
+						.col-6.col-m-4
+							input(type='password' name='pw')
+						.col-8.col-m-8
+							button.material_button(type='submit' style='float: right')
+								|Complete

@@ -1,0 +1,33 @@
+"testsite" : { //name as in URL
+	"siteID": "135468ABDHCD", //UUID
+	"urlname": "testsite", //name as in URL (unique)
+	"title": "Website", //display name
+	"users": {
+		"325934857DFKkGJ": { //UUID
+			"email": "john.doe@mail.com", //email + login name
+			"name": "John Doe", //display name
+			"pwhash": "208374wq8ejhgd", //salted and hashed pw
+			"salt": "lkjsdfu309reihvf8", //salt
+			"role": "admin" //TBD
+		}
+	},
+	"menu": [ {
+		"label": "Home", //display name
+		"href": "/testsite" //url
+	}],
+	"subsites": {
+		"index": { //name as in URL (unique for doc) ('index' for index)
+			"title": "Website", //display name
+			"cards": [ {
+				"ops": [ /*Quill Delta*/ ],
+				"ops": [ /*Quill Delta*/ ]
+			}]
+		}, "shop" : {
+			"title": "Website Shop",
+			"cards": [ {
+				"ops": [ /*Quill Delta*/ ],
+				"ops": [ /*Quill Delta*/ ]
+			}]
+		}
+	} 
+}

@@ -1,0 +1,9 @@
+extends ./cb_layout.pug
+
+block head
+	if user
+		script(src='/javascripts/editmode.js')
+		script var urlname = '#{site.urlname}', subsite = '#{subsite}';
+
+block content
+	include ./cb_incl_content.pug

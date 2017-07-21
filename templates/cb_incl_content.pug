@@ -1,0 +1,16 @@
+each card, index in site.subsites[subsite].cards
+	.card(id=index)
+		.row
+			.col-8.col-m-8
+				div(id='editor_'+index style='border: none')
+				script.
+					var escaped = !{JSON.stringify(card)};
+					var quillDelta = JSON.parse(unescapeHtml(JSON.stringify(escaped) ) );
+					newQuill('#editor_#{index}', false, quillDelta);
+		.row.deletecardbutton
+			.col-8.col-m-8
+				button.material_button.deletecardbutton
+					|DELETE
+.center_wrap#insertcardhere
+	button#newcardbutton.material_button(type="button")
+		|NEW CARD

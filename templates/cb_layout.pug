@@ -1,0 +1,42 @@
+doctype html
+html
+	head
+		block append head
+			title= site.title
+			meta(name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0")
+			link(rel='stylesheet', href='/stylesheets/stylesheet.css')
+			link(href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,100&subset=latin,latin-ext' rel='stylesheet' type='text/css')
+			link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
+			//Offline mirros for scripts
+			link(href="//cdn.quilljs.com/1.0.3/quill.snow.css" rel="stylesheet")
+			//link(href='/stylesheets/quill.snow.js')
+			script(src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous")
+			//script(src='/javascripts/jquery-2.2.4.min.js')
+			script(src="https://cdn.quilljs.com/1.0.3/quill.js")
+			//script(src='/javascripts/quill.js')
+			script(src='/javascripts/script.js')
+			if msg
+				script $(document).ready( function() { showPopup(); });
+		
+		block head
+	body
+		#message_bg.center_wrap
+			#message_popup
+				.row
+					h1#msg_title
+						if msg && msg.title
+							= msg.title
+						else 
+							= 'Info'
+				.divider
+				.row#msg_html
+					p
+						if msg
+							= msg.text
+		#header
+			block header
+				include ./cb_menu.pug
+		#content.middle
+			block content
+		#footer
+			block footer

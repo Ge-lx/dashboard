@@ -1,0 +1,63 @@
+var data = {
+  "posts": {
+    "0CDE01": {
+      "title": "Kanzleigrillen",
+      "content": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores.",
+      "date": "28.02.1887"
+    },
+    "DERNXT": {
+      "title": "Ankuendigung",
+      "content": "Et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore.",
+      "date": "19.04.2017"
+    },
+    "NOCHWA": {
+      "title": "Drucker kaputt",
+      "content": "Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Claudia ipsum et marcus dolor sit amet, hic forum est et cetera.",
+      "date": "04.09.2009"
+    }
+  },
+  "links": {
+    "J890B2": {
+      "name": "Gesetze Online",
+      "url": "http://www.gesetze-online.de/"
+    },
+    "CBCBCN": {
+      "name": "Mail",
+      "url": "?offline_link?"
+    },
+    "COCONO": {
+      "name": "Link",
+      "url": "https://example.com"
+    }
+  },
+  "categories": {
+   "BH76DE": {
+     "name": "Allgemein",
+     "url": "allgemein",
+     "documents": {
+       "CA3B8H": {
+         "name": "Irgendwas",
+         "filename": "irgendwas.doc"
+       },
+       "DB73B2": {
+         "name": "Nochwas",
+         "filename": "nochwas.pdf"
+       }
+     }
+   },
+   "H7GT34": {
+     "name": "Arbeitsrecht",
+     "url": "arbeitsrecht",
+     "documents": {
+       "C34B8N": {
+         "name": "Mustervertrag",
+         "filename": "mustervertrag.doc"
+       },
+       "H8JU64": {
+         "name": "Gutachtenbeispiel",
+         "filename": "gutachtenbeispiel.doc"
+       }
+     }
+   }
+ }
+}

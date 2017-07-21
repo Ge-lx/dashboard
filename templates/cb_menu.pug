@@ -1,0 +1,35 @@
+.middle.full_height
+	a(href='/' + site.urlname)
+		img.header_logo(src="/images/logo_white_new.svg")
+	a#menu_label(href="#menu") Menü
+	ul#menu.menu_container
+		each item, index in site.menu
+			li.menu_item(data-index=index)
+				a(href=item.href) #{item.label}
+				if user
+					script.
+						var menu_item = {label: '!{item.label}', href: '!{item.href}'};
+						menu[!{index}] = menu_item;
+					.divider
+					.menu_dropdown
+						label.menu_dropdown_label(for='label')
+							|Label:
+						input.menu_label_input(type='name' name='label' value=item.label data-index=index)
+						label.menu_dropdown_label(for='href')
+							|Link:
+						input.menu_href_input(type='name' name='href' value=item.href data-index=index)
+						button.material_button.material_button_critical.menu_delete(type="button" data-index=index)
+							|DELETE
+						button.material_button.menu_save(type="button" data-index=index)
+							|OK
+				
+		if user
+			li.menu_item
+				button#newmenubutton.material_button(type="button")
+					|NEW
+	if user
+		.header_right
+			p.menu_user_name
+				|Logged in as #{user.name}
+			button#editbutton.material_button(type="button")
+				|EDIT

@@ -1,0 +1,33 @@
+extends ./cb_layout.pug
+
+block content
+	.card
+		.row
+			.col-8.col-m-8
+				h1
+					if existingSession
+						|You are already logged in.
+					else
+						|Login
+				p.secondary
+					if existingSession
+						|Please log out first.
+					else 
+						|You can login with your email and password here.
+		.row
+			.col-4.col-m-8
+				unless existingSession
+					form(action="login" method="post").nopad
+						.col-2.col-m-4
+							label(for='email')
+								|e-Mail
+						.col-6.col-m-4
+							input(type='email' name='email')
+						.col-2.col-m-4
+							label(for='pw')
+								|Password
+						.col-6.col-m-4
+							input(type='password' name='pw')
+						.col-8.col-m-8
+							button.material_button(type='submit' style='float: right')
+								|Login

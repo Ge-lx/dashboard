@@ -1,0 +1,2 @@
+userID: UserUUID
+siteID: site UUID (for quicker middleware)
